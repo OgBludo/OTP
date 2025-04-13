@@ -1,0 +1,107 @@
+2025-04-13 16:55:36 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 16:56:36 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 16:56:54 [HTTP-Dispatcher] INFO  com.otp.api.RegisterHandler - Received registration request: username=user1, role=user
+2025-04-13 16:56:54 [HTTP-Dispatcher] ERROR com.otp.api.RegisterHandler - Registration failed
+org.postgresql.util.PSQLException: ОШИБКА: повторяющееся значение ключа нарушает ограничение уникальности "users_username_key"
+  Подробности: Ключ "(username)=(user1)" уже существует.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2725)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2412)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:371)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:502)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:419)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:155)
+	at com.otp.dao.UserDao.save(UserDao.java:29)
+	at com.otp.api.RegisterHandler.handle(RegisterHandler.java:51)
+	at jdk.httpserver/com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:98)
+	at jdk.httpserver/sun.net.httpserver.AuthFilter.doFilter(AuthFilter.java:82)
+	at jdk.httpserver/com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:101)
+	at jdk.httpserver/sun.net.httpserver.ServerImpl$Exchange$LinkHandler.handle(ServerImpl.java:873)
+	at jdk.httpserver/com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:98)
+	at jdk.httpserver/sun.net.httpserver.ServerImpl$Exchange.run(ServerImpl.java:849)
+	at jdk.httpserver/sun.net.httpserver.ServerImpl$DefaultExecutor.execute(ServerImpl.java:204)
+	at jdk.httpserver/sun.net.httpserver.ServerImpl$Dispatcher.handle(ServerImpl.java:567)
+	at jdk.httpserver/sun.net.httpserver.ServerImpl$Dispatcher.run(ServerImpl.java:532)
+	at java.base/java.lang.Thread.run(Thread.java:1575)
+2025-04-13 16:57:09 [HTTP-Dispatcher] INFO  com.otp.api.RegisterHandler - Received registration request: username=user21, role=user
+2025-04-13 16:57:09 [HTTP-Dispatcher] INFO  com.otp.api.RegisterHandler - User user21 registered successfully
+2025-04-13 16:57:36 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 16:57:38 [HTTP-Dispatcher] INFO  com.otp.api.LoginHandler - Received login request: username=admin
+2025-04-13 16:57:38 [HTTP-Dispatcher] INFO  com.otp.api.LoginHandler - Login successful, token generated for admin
+2025-04-13 16:58:09 [HTTP-Dispatcher] INFO  c.otp.admin.UpdateOtpSettingsHandler - OTP settings updated: codeLength=7, codeTTL=1200
+2025-04-13 16:58:36 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 16:58:36 [HTTP-Dispatcher] INFO  com.otp.util.NotificationService - Saving OTP to file for userId 1
+2025-04-13 16:58:36 [HTTP-Dispatcher] INFO  com.otp.util.NotificationService - Saving OTP to file for userId 1 successful
+2025-04-13 16:58:36 [HTTP-Dispatcher] INFO  com.otp.api.GenerateOtpHandler - OTP sent to null via file
+2025-04-13 16:59:36 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 17:00:09 [HTTP-Dispatcher] INFO  com.otp.util.NotificationService - Sending OTP via email to null
+2025-04-13 17:00:09 [HTTP-Dispatcher] INFO  c.o.service.EmailNotificationService - Sending email to null with OTP code 1364016
+2025-04-13 17:00:29 [HTTP-Dispatcher] INFO  com.otp.util.NotificationService - Sending OTP via email to mihailkadyrov2002@mail.ru
+2025-04-13 17:00:29 [HTTP-Dispatcher] INFO  c.o.service.EmailNotificationService - Sending email to mihailkadyrov2002@mail.ru with OTP code 4131593
+2025-04-13 17:00:36 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 17:00:37 [HTTP-Dispatcher] INFO  com.otp.api.GenerateOtpHandler - OTP sent to mihailkadyrov2002@mail.ru via email
+2025-04-13 17:01:28 [HTTP-Dispatcher] INFO  com.otp.util.NotificationService - Sending OTP via SMS to 89384776552
+2025-04-13 17:01:28 [HTTP-Dispatcher] INFO  c.otp.service.SmsNotificationService - Sending sms to 89384776552 with OTP code 3143330
+2025-04-13 17:01:28 [HTTP-Dispatcher] INFO  org.jsmpp.session.SMPPSession - Connected to localhost/127.0.0.1
+2025-04-13 17:01:28 [PDUReaderWorker: org.jsmpp.session.SMPPSession@2526a716] INFO  org.jsmpp.session.SMPPSession - Starting PDUReaderWorker
+2025-04-13 17:01:28 [HTTP-Dispatcher] INFO  org.jsmpp.bean.OptionalParameters - Optional Parameter Tag class org.jsmpp.bean.OptionalParameter$Sc_interface_version not found
+2025-04-13 17:01:28 [HTTP-Dispatcher] INFO  org.jsmpp.session.SMPPSession - Changing processor degree to 3
+2025-04-13 17:01:28 [PDUReaderWorker: org.jsmpp.session.SMPPSession@2526a716] INFO  org.jsmpp.session.SMPPSession - Reading PDU session 1f3ad689 in state BOUND_TX: null
+2025-04-13 17:01:28 [HTTP-Dispatcher] INFO  com.otp.api.GenerateOtpHandler - OTP sent to 89384776552 via sms
+2025-04-13 17:01:28 [PDUReaderWorker: org.jsmpp.session.SMPPSession@2526a716] INFO  org.jsmpp.session.SMPPSession - PDUReaderWorker stop
+2025-04-13 17:01:36 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 17:02:08 [HTTP-Dispatcher] INFO  com.otp.util.NotificationService - Sending OTP via Telegram
+2025-04-13 17:02:08 [HTTP-Dispatcher] INFO  c.o.s.TelegramNotificationService - Sending message via telegram with OTP code 5987277
+2025-04-13 17:02:13 [HTTP-Dispatcher] INFO  c.o.s.TelegramNotificationService - Telegram message sent successfully.
+2025-04-13 17:02:13 [HTTP-Dispatcher] INFO  com.otp.api.GenerateOtpHandler - OTP sent to null via telegram
+2025-04-13 17:46:52 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 17:47:52 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 17:48:02 [HTTP-Dispatcher] INFO  com.otp.api.RegisterHandler - Received registration request: username=testUser, role=user
+2025-04-13 17:48:02 [HTTP-Dispatcher] INFO  com.otp.api.RegisterHandler - User testUser registered successfully
+2025-04-13 17:48:47 [HTTP-Dispatcher] INFO  com.otp.api.LoginHandler - Received login request: username=testUser
+2025-04-13 17:48:47 [HTTP-Dispatcher] INFO  com.otp.api.LoginHandler - Login successful, token generated for testUser
+2025-04-13 17:48:52 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 17:49:52 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 17:50:12 [HTTP-Dispatcher] INFO  com.otp.util.NotificationService - Saving OTP to file for userId 8
+2025-04-13 17:50:12 [HTTP-Dispatcher] INFO  com.otp.util.NotificationService - Saving OTP to file for userId 8 successful
+2025-04-13 17:50:12 [HTTP-Dispatcher] INFO  com.otp.api.GenerateOtpHandler - OTP sent to null via file
+2025-04-13 17:50:52 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 17:51:52 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 17:52:50 [HTTP-Dispatcher] INFO  com.otp.util.NotificationService - Sending OTP via Telegram
+2025-04-13 17:52:50 [HTTP-Dispatcher] INFO  c.o.s.TelegramNotificationService - Sending message via telegram with OTP code 4066372
+2025-04-13 17:52:51 [HTTP-Dispatcher] INFO  c.o.s.TelegramNotificationService - Telegram message sent successfully.
+2025-04-13 17:52:51 [HTTP-Dispatcher] INFO  com.otp.api.GenerateOtpHandler - OTP sent to null via telegram
+2025-04-13 17:52:52 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 17:53:52 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 17:54:08 [HTTP-Dispatcher] INFO  com.otp.util.NotificationService - Sending OTP via email to mihailkadyrov2002@mail.ru
+2025-04-13 17:54:08 [HTTP-Dispatcher] INFO  c.o.service.EmailNotificationService - Sending email to mihailkadyrov2002@mail.ru with OTP code 0876413
+2025-04-13 17:54:14 [HTTP-Dispatcher] INFO  com.otp.api.GenerateOtpHandler - OTP sent to mihailkadyrov2002@mail.ru via email
+2025-04-13 17:54:52 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 17:55:41 [HTTP-Dispatcher] INFO  com.otp.util.NotificationService - Sending OTP via SMS to +71231231212
+2025-04-13 17:55:41 [HTTP-Dispatcher] INFO  c.otp.service.SmsNotificationService - Sending sms to +71231231212 with OTP code 8435179
+2025-04-13 17:55:41 [HTTP-Dispatcher] INFO  org.jsmpp.session.SMPPSession - Connected to localhost/127.0.0.1
+2025-04-13 17:55:41 [PDUReaderWorker: org.jsmpp.session.SMPPSession@74977f48] INFO  org.jsmpp.session.SMPPSession - Starting PDUReaderWorker
+2025-04-13 17:55:41 [HTTP-Dispatcher] INFO  org.jsmpp.bean.OptionalParameters - Optional Parameter Tag class org.jsmpp.bean.OptionalParameter$Sc_interface_version not found
+2025-04-13 17:55:41 [HTTP-Dispatcher] INFO  org.jsmpp.session.SMPPSession - Changing processor degree to 3
+2025-04-13 17:55:41 [PDUReaderWorker: org.jsmpp.session.SMPPSession@74977f48] INFO  org.jsmpp.session.SMPPSession - Reading PDU session e93132c2 in state BOUND_TX: null
+2025-04-13 17:55:41 [HTTP-Dispatcher] INFO  com.otp.api.GenerateOtpHandler - OTP sent to +71231231212 via sms
+2025-04-13 17:55:41 [PDUReaderWorker: org.jsmpp.session.SMPPSession@74977f48] INFO  org.jsmpp.session.SMPPSession - PDUReaderWorker stop
+2025-04-13 17:55:52 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 17:56:52 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 17:57:35 [HTTP-Dispatcher] INFO  com.otp.api.LoginHandler - Received login request: username=admin
+2025-04-13 17:57:35 [HTTP-Dispatcher] INFO  com.otp.api.LoginHandler - Login successful, token generated for admin
+2025-04-13 17:57:52 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 17:58:12 [HTTP-Dispatcher] INFO  c.otp.admin.UpdateOtpSettingsHandler - OTP settings updated: codeLength=4, codeTTL=3600
+2025-04-13 17:58:52 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 17:59:52 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 17:59:53 [HTTP-Dispatcher] INFO  com.otp.api.ValidateOtpHandler - OTP code validated and marked as used for userId 8
+2025-04-13 18:00:52 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 18:01:21 [HTTP-Dispatcher] INFO  com.otp.admin.GetUsersHandler - Received request to get users
+2025-04-13 18:01:21 [HTTP-Dispatcher] INFO  com.otp.admin.GetUsersHandler - Fetched 4 users
+2025-04-13 18:01:52 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 18:02:29 [HTTP-Dispatcher] INFO  com.otp.admin.DeleteUserHandler - Received request to delete user
+2025-04-13 18:02:29 [HTTP-Dispatcher] INFO  com.otp.admin.DeleteUserHandler - Attempting to delete user: user1
+2025-04-13 18:02:29 [HTTP-Dispatcher] INFO  com.otp.admin.DeleteUserHandler - User user1 deleted successfully
+2025-04-13 18:02:52 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 18:03:52 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
+2025-04-13 18:04:52 [pool-1-thread-1] INFO  c.otp.scheduler.OtpExpiryScheduler - Expired old OTPs
